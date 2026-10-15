@@ -154,3 +154,79 @@
   animation: glowPulse 3s infinite;
 }
 
+/* Specular studio light sweep for bottle cards */
+@keyframes specularSweep {
+  0% {
+    transform: translateX(-150%) skewX(-25deg);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.7;
+  }
+  45% {
+    transform: translateX(250%) skewX(-25deg);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(250%) skewX(-25deg);
+    opacity: 0;
+  }
+}
+
+.animate-specular-sweep {
+  position: relative;
+  overflow: hidden;
+}
+
+.animate-specular-sweep::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.18) 50%,
+    transparent 100%
+  );
+  pointer-events: none;
+  animation: specularSweep 7s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+/* Fluid timeline flow animation */
+@keyframes timelineFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 300% 50%;
+  }
+}
+
+.animate-timeline-flow {
+  background: linear-gradient(90deg, #262832 0%, #E2E8F0 50%, #262832 100%);
+  background-size: 200% 100%;
+  animation: timelineFlow 4s linear infinite;
+}
+
+/* Shimmer gleam for editorial typography */
+@keyframes shimmerGleam {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.shimmer-text {
+  background: linear-gradient(90deg, #FFFFFF 0%, #94A3B8 20%, #FFFFFF 40%, #E2E8F0 70%, #FFFFFF 100%);
+  background-size: 200% auto;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: shimmerGleam 5s linear infinite;
+}
+

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import BottleCloseUpVisual from './visuals/BottleCloseUpVisual';
 import PaperSwatchVisual from './visuals/PaperSwatchVisual';
+import InteractiveInkCanvas from './visuals/InteractiveInkCanvas';
 import { ASSET_CONFIG } from '../config/assets';
 import { Eye, Copy, Check, Sparkles, X, Maximize2 } from 'lucide-react';
 
@@ -107,6 +108,11 @@ export default function ColourShowcase() {
             <PaperSwatchVisual className="h-full min-h-[380px]" />
           </div>
 
+        </div>
+
+        {/* Interactive Ink Testing Canvas (Virtual Dip-Pen Nib Experience) */}
+        <div className="mb-20 reveal">
+          <InteractiveInkCanvas />
         </div>
 
         {/* --- DEDICATED PRODUCT & PROCESS GALLERY --- */}

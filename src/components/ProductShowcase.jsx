@@ -111,7 +111,7 @@ export default function ProductShowcase() {
             <div className="lg:col-span-5 flex flex-col gap-4">
               
               {/* Main Image Frame (Light Studio Background to Ensure Black Ink Visibility) */}
-              <div className="relative aspect-4/5 rounded-2xl overflow-hidden bg-gradient-to-b from-[#FFFFFF] via-[#F8FAFC] to-[#EDF2F7] border border-[#CBD5E1] p-6 sm:p-8 flex items-center justify-center shadow-inner group">
+              <div className="relative aspect-4/5 rounded-2xl overflow-hidden bg-gradient-to-b from-[#FFFFFF] via-[#F8FAFC] to-[#EDF2F7] border border-[#CBD5E1] p-6 sm:p-8 flex items-center justify-center shadow-inner group animate-specular-sweep">
                 <img
                   src={bottlePhoto}
                   alt="INKORA Black Ink actual laboratory prototype bottle"

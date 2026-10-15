@@ -1,6 +1,7 @@
 import React from 'react';
 import { FlaskConical, ArrowRight } from 'lucide-react';
 import HeroProductVisual from './visuals/HeroProductVisual';
+import InkParticleCanvas from './visuals/InkParticleCanvas';
 import { ASSET_CONFIG } from '../config/assets';
 
 export default function HeroSection() {
@@ -22,27 +23,30 @@ export default function HeroSection() {
       id="home" 
       className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden bg-subtle-grid"
     >
+      {/* Interactive Colloidal Ink Particle Canvas */}
+      <InkParticleCanvas />
+
       {/* Subtle Dark Studio Ambient Rim Accents */}
       <div 
-        className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[450px] bg-gradient-to-tr from-white/[0.03] via-white/[0.01] to-transparent rounded-full blur-3xl pointer-events-none -z-10" 
+        className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[450px] bg-gradient-to-tr from-white/[0.04] via-white/[0.01] to-transparent rounded-full blur-3xl pointer-events-none -z-10" 
         aria-hidden="true"
       />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           
           {/* Left Column: Brand Copy & Actions */}
           <div className="lg:col-span-6 flex flex-col items-start text-left reveal">
             
             {/* Project Origin Pill */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#181A22] border border-[#2F323F] text-xs font-mono tracking-wider text-[#CBD5E1] mb-6 shadow-sm">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#181A22] border border-[#2F323F] text-xs font-mono tracking-wider text-[#CBD5E1] mb-6 shadow-sm hover:border-[#64748B] transition-colors">
               <FlaskConical className="w-3.5 h-3.5 text-[#E2E8F0]" />
               <span>STUDENT PRACTICAL PROJECT · BLACK INK FORMULATION</span>
             </div>
 
             {/* Main Headline */}
             <h1 className="font-serif text-5xl sm:text-6xl xl:text-7xl font-bold tracking-tight text-white leading-[1.08] mb-6">
-              Precision in <span className="italic font-normal text-[#E2E8F0]">Every Drop.</span>
+              Precision in <span className="italic font-normal shimmer-text">Every Drop.</span>
             </h1>
 
             {/* Supporting Text */}

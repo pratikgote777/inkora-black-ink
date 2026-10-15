@@ -121,8 +121,8 @@ export default function FormulationProcess() {
         <div className="hidden lg:block mb-12">
           {/* Horizontal Step Header Indicators */}
           <div className="grid grid-cols-8 gap-2 relative">
-            {/* Horizontal Connecting Line */}
-            <div className="absolute top-6 left-8 right-8 h-0.5 bg-[#262832] -z-0" />
+            {/* Horizontal Connecting Line with Fluid Animation */}
+            <div className="absolute top-6 left-8 right-8 h-1 rounded-full animate-timeline-flow -z-0 opacity-80" />
 
             {steps.map((step, idx) => {
               const Icon = step.icon;
@@ -133,18 +133,18 @@ export default function FormulationProcess() {
                   key={idx}
                   type="button"
                   onClick={() => setActiveStep(idx)}
-                  className="relative z-10 flex flex-col items-center text-center group focus:outline-none"
+                  className="relative z-10 flex flex-col items-center text-center group focus:outline-none cursor-pointer"
                 >
                   {/* Step Bubble */}
                   <div 
                     className={`w-12 h-12 rounded-2xl flex items-center justify-center transition-all duration-300 ${
                       isSelected
                         ? isCoolingStep 
-                          ? 'bg-[#38BDF8] text-[#090A0C] ring-4 ring-[#38BDF8]/20 shadow-editorial'
-                          : 'bg-[#E2E8F0] text-[#090A0C] ring-4 ring-white/20 shadow-editorial'
+                          ? 'bg-[#38BDF8] text-[#090A0C] ring-4 ring-[#38BDF8]/20 shadow-editorial animate-glow-pulse scale-108'
+                          : 'bg-[#E2E8F0] text-[#090A0C] ring-4 ring-white/20 shadow-editorial animate-glow-pulse scale-108'
                         : isCoolingStep
-                          ? 'bg-[#121B24] text-[#38BDF8] border border-[#0284C7]/40 hover:border-[#38BDF8]'
-                          : 'bg-[#14151B] text-[#94A3B8] border border-[#262832] group-hover:border-[#3F4354]'
+                          ? 'bg-[#121B24] text-[#38BDF8] border border-[#0284C7]/40 hover:border-[#38BDF8] hover:scale-104'
+                          : 'bg-[#14151B] text-[#94A3B8] border border-[#262832] group-hover:border-[#3F4354] hover:scale-104'
                     }`}
                   >
                     <Icon className="w-5 h-5 stroke-[1.75]" />

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { 
   Receipt, 
   Beaker, 
@@ -130,6 +130,47 @@ const APPARATUS_EQUIPMENT = [
 ];
 
 export default function CostBreakdown() {
+  const [hasAnimated, setHasAnimated] = useState(false);
+  const cardsRef = useRef(null);
+
+  useEffect(() => {
+    const el = cardsRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setHasAnimated(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.25 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  const [count1, setCount1] = useState(0);
+  const [count2, setCount2] = useState(0);
+  const [count3, setCount3] = useState(0);
+
+  useEffect(() => {
+    if (!hasAnimated) return;
+    const duration = 1200;
+    const startTime = performance.now();
+
+    const update = (now) => {
+      const progress = Math.min((now - startTime) / duration, 1);
+      const ease = 1 - Math.pow(1 - progress, 3);
+      setCount1(14 * ease);
+      setCount2(49 * ease);
+      setCount3(21 * ease);
+      if (progress < 1) {
+        requestAnimationFrame(update);
+      }
+    };
+    requestAnimationFrame(update);
+  }, [hasAnimated]);
+
   return (
     <section id="cost-breakdown" className="py-24 bg-[#090A0C] border-y border-[#1E2028] relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -291,14 +332,14 @@ export default function CostBreakdown() {
         {/* ========================================================= */}
         {/* SUMMARY CARDS: TOTAL BATCH & PER-BOTTLE COST             */}
         {/* ========================================================= */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 reveal">
+        <div ref={cardsRef} className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 reveal">
           {/* Card 1: Total Ingredients */}
-          <div className="bg-[#14151B] rounded-2xl p-6 border border-[#262832] flex flex-col justify-between">
+          <div className="bg-[#14151B] rounded-2xl p-6 border border-[#262832] flex flex-col justify-between hover:border-[#3F4354] transition-all">
             <span className="text-[11px] font-mono uppercase tracking-wider text-[#94A3B8]">
               Total Ingredient Cost
             </span>
             <div className="font-serif text-2xl sm:text-3xl font-bold text-white my-2">
-              ₹14.00
+              ₹{hasAnimated ? count1.toFixed(2) : '14.00'}
             </div>
             <span className="text-[11px] font-mono text-[#64748B]">
               All chemical reagents (100 mL batch)
@@ -306,12 +347,12 @@ export default function CostBreakdown() {
           </div>
 
           {/* Card 2: Total Consumables */}
-          <div className="bg-[#14151B] rounded-2xl p-6 border border-[#262832] flex flex-col justify-between">
+          <div className="bg-[#14151B] rounded-2xl p-6 border border-[#262832] flex flex-col justify-between hover:border-[#3F4354] transition-all">
             <span className="text-[11px] font-mono uppercase tracking-wider text-[#94A3B8]">
               Total Consumables Cost
             </span>
             <div className="font-serif text-2xl sm:text-3xl font-bold text-white my-2">
-              ₹49.00
+              ₹{hasAnimated ? count2.toFixed(2) : '49.00'}
             </div>
             <span className="text-[11px] font-mono text-[#64748B]">
               3 × 30 mL bottles, caps & filter paper
@@ -319,7 +360,7 @@ export default function CostBreakdown() {
           </div>
 
           {/* Card 3: Total Production Cost per Finished Bottle */}
-          <div className="bg-gradient-to-br from-[#1C1E28] via-[#14151B] to-[#0E0F14] rounded-2xl p-6 border border-[#3E4357] flex flex-col justify-between shadow-editorial">
+          <div className="bg-gradient-to-br from-[#1C1E28] via-[#14151B] to-[#0E0F14] rounded-2xl p-6 border border-[#3E4357] flex flex-col justify-between shadow-editorial hover:border-[#64748B] transition-all">
             <div className="flex items-center justify-between">
               <span className="text-[11px] font-mono uppercase tracking-wider text-[#CBD5E1] font-semibold">
                 Cost Per Finished Bottle
@@ -329,7 +370,7 @@ export default function CostBreakdown() {
               </span>
             </div>
             <div className="font-serif text-3xl sm:text-4xl font-bold text-white my-2">
-              ₹21.00
+              ₹{hasAnimated ? count3.toFixed(2) : '21.00'}
             </div>
             <span className="text-[11px] font-mono text-[#CBD5E1]">
               ₹63.00 batch total ÷ 3 completed bottles

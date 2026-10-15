@@ -60,7 +60,7 @@ export default function ProductDetails() {
                 </div>
 
                 {/* Real Bottle Image in Clean Light Studio Sweep for Maximum Contrast */}
-                <div className="relative w-full overflow-hidden rounded-xl bg-gradient-to-b from-[#FFFFFF] via-[#F8FAFC] to-[#EDF2F7] p-2.5 flex items-center justify-center">
+                <div className="relative w-full overflow-hidden rounded-xl bg-gradient-to-b from-[#FFFFFF] via-[#F8FAFC] to-[#EDF2F7] p-2.5 flex items-center justify-center animate-specular-sweep">
                   <img
                     src="/images/products/real-inkora-black-ink-bottle.jpeg"
                     alt="Real physical bottle of INKORA Black Ink at MIT AOE School of Chemical Engineering"
