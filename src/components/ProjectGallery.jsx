@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { GALLERY_PHOTOS, GALLERY_VIDEOS } from '../config/galleryAssets';
+import { getAssetUrl } from '../utils/assetUrl';
 import BottleCloseUpVisual from './visuals/BottleCloseUpVisual';
 import PaperSwatchVisual from './visuals/PaperSwatchVisual';
 import { 
@@ -122,7 +123,7 @@ export default function ProjectGallery() {
               <div className="relative aspect-4/3 overflow-hidden bg-gradient-to-b from-[#FFFFFF] via-[#F8FAFC] to-[#EDF2F7] border-b border-[#262832] flex items-center justify-center p-2">
                 {item.src ? (
                   <img
-                    src={item.src}
+                    src={getAssetUrl(item.src)}
                     alt={item.title}
                     loading="lazy"
                     className="w-full h-full object-contain rounded-xl group-hover:scale-103 transition-transform duration-500"
@@ -215,7 +216,7 @@ export default function ProjectGallery() {
                 <div className="relative aspect-9/16 max-h-[380px] bg-gradient-to-b from-[#FFFFFF] via-[#F8FAFC] to-[#EDF2F7] flex items-center justify-center overflow-hidden border-b border-[#262832] p-1.5">
                   <video
                     ref={(el) => (videoRefs.current[idx] = el)}
-                    src={vid.src}
+                    src={getAssetUrl(vid.src)}
                     controls
                     playsInline
                     preload="metadata"
@@ -340,7 +341,7 @@ export default function ProjectGallery() {
               <div className="w-full max-w-2xl bg-gradient-to-b from-[#FFFFFF] via-[#F8FAFC] to-[#EDF2F7] p-4 sm:p-6 rounded-2xl border border-white/20 shadow-xl flex items-center justify-center">
                 {currentLightboxItem.src ? (
                   <img
-                    src={currentLightboxItem.src}
+                    src={getAssetUrl(currentLightboxItem.src)}
                     alt={currentLightboxItem.title}
                     className="max-h-[58vh] w-auto max-w-full rounded-xl object-contain shadow-sm"
                   />

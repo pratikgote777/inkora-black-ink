@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { ASSET_CONFIG } from '../config/assets';
+import { getAssetUrl } from '../utils/assetUrl';
 import { AlertTriangle, History, ArrowRight, Camera } from 'lucide-react';
 
 export default function IngredientsSection() {
@@ -69,7 +70,7 @@ export default function IngredientsSection() {
                     {/* Real Ingredient Photograph */}
                     <div className="w-full h-44 rounded-2xl overflow-hidden mb-5 border border-[#262832] bg-[#0E0F13] relative">
                       <img
-                        src={item.image}
+                        src={getAssetUrl(item.image)}
                         alt={item.alt}
                         className="w-full h-full object-cover group-hover:scale-104 transition-transform duration-500"
                         loading="lazy"
@@ -137,7 +138,7 @@ export default function IngredientsSection() {
 
                   <div className="w-full h-48 rounded-2xl overflow-hidden mb-5 border border-[#262832] bg-[#0E0F13] relative">
                     <img
-                      src={item.image}
+                      src={getAssetUrl(item.image)}
                       alt={item.alt}
                       className="w-full h-full object-cover"
                     />

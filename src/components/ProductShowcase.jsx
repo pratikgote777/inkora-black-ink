@@ -8,6 +8,7 @@ import {
   ArrowRight
 } from 'lucide-react';
 import { ASSET_CONFIG } from '../config/assets';
+import { getAssetUrl } from '../utils/assetUrl';
 
 /**
  * =========================================================================
@@ -19,7 +20,7 @@ import { ASSET_CONFIG } from '../config/assets';
 export const PRODUCT_SELLING_PRICE = "Price to be announced";
 
 export default function ProductShowcase() {
-  const bottlePhoto = ASSET_CONFIG.images.heroProduct.url || '/images/products/real-inkora-black-ink-bottle.jpeg';
+  const bottlePhoto = ASSET_CONFIG.images.heroProduct.url || getAssetUrl('/images/products/real-inkora-black-ink-bottle.jpeg');
 
   const handleEnquiryClick = () => {
     const contactSection = document.getElementById('contact');

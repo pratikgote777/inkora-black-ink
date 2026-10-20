@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Edit3, Check, RotateCcw, ArrowRight, Info, Droplets } from 'lucide-react';
+import { getAssetUrl } from '../utils/assetUrl';
 
 export default function ProductDetails() {
   const [batchVolume, setBatchVolume] = useState(() => {
@@ -62,7 +63,7 @@ export default function ProductDetails() {
                 {/* Real Bottle Image in Clean Light Studio Sweep for Maximum Contrast */}
                 <div className="relative w-full overflow-hidden rounded-xl bg-gradient-to-b from-[#FFFFFF] via-[#F8FAFC] to-[#EDF2F7] p-2.5 flex items-center justify-center animate-specular-sweep">
                   <img
-                    src="/images/products/real-inkora-black-ink-bottle.jpeg"
+                    src={getAssetUrl('/images/products/real-inkora-black-ink-bottle.jpeg')}
                     alt="Real physical bottle of INKORA Black Ink at MIT AOE School of Chemical Engineering"
                     className="w-full h-auto max-h-[460px] object-contain rounded-lg shadow-md transform group-hover:scale-102 transition-transform duration-500"
                     loading="lazy"

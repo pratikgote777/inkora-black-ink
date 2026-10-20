@@ -1,5 +1,6 @@
 import React from 'react';
 import { ASSET_CONFIG } from '../../config/assets';
+import { getAssetUrl } from '../../utils/assetUrl';
 
 export default function HeroProductVisual({ className = '' }) {
   const { heroProduct, heroVideo } = ASSET_CONFIG.images;
@@ -10,7 +11,7 @@ export default function HeroProductVisual({ className = '' }) {
       <div className={`relative group ${className}`}>
         <div className="relative overflow-hidden rounded-3xl bg-[#F8FAFC] border border-[#CBD5E1] p-3 shadow-editorial-lg">
           <video
-            src={heroVideo.url}
+            src={getAssetUrl(heroVideo.url)}
             poster={heroVideo.poster || undefined}
             controls
             playsInline
@@ -33,7 +34,7 @@ export default function HeroProductVisual({ className = '' }) {
         <div className="relative overflow-hidden rounded-3xl bg-gradient-to-b from-[#FFFFFF] via-[#F8FAFC] to-[#EDF2F7] border border-[#CBD5E1] p-3.5 shadow-editorial-lg">
           <div className="relative overflow-hidden rounded-2xl">
             <img
-              src={heroProduct.url}
+              src={getAssetUrl(heroProduct.url)}
               alt={heroProduct.alt}
               className="w-full h-auto object-cover transform transition-transform duration-700 group-hover:scale-102 max-h-[500px]"
             />

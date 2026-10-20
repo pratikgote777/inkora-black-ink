@@ -8,13 +8,15 @@
  * 4. Set 'isConcept: false' when providing real lab/prototype media.
  */
 
+import { getAssetUrl } from '../utils/assetUrl';
+
 export const ASSET_CONFIG = {
   brand: {
     name: 'INKORA',
     tagline: 'Every Drop Tells a Story.',
     productName: 'INKORA Black Ink',
     batchCode: 'EXP-FE-TANNIN-01',
-    logoIcon: '/favicon.svg',
+    logoIcon: getAssetUrl('/favicon.svg'),
     shadeName: 'Intense Black (Iron-Gallate Complex)',
     volumeDefault: 'To be measured'
   },
@@ -22,30 +24,30 @@ export const ASSET_CONFIG = {
   // Primary Feature Media
   images: {
     heroProduct: {
-      url: '/images/products/real-inkora-black-ink-bottle.jpeg',
+      url: getAssetUrl('/images/products/real-inkora-black-ink-bottle.jpeg'),
       alt: 'Real cylindrical glass laboratory bottle filled with deep black INKORA ink, white cap, on bench at MIT AOE School of Chemical Engineering',
       caption: 'INKORA Black Ink — Real Laboratory Formulation Specimen',
       isConcept: false
     },
     heroVideo: {
-      url: null, // e.g., '/videos/hero-black-ink.mp4'
+      url: null, // e.g., getAssetUrl('/videos/hero-black-ink.mp4')
       poster: null,
       caption: 'Viscosity and capillary flow test on cotton paper'
     },
     bottleCloseUp: {
-      url: '/images/products/real-inkora-black-ink-bottle.jpeg',
+      url: getAssetUrl('/images/products/real-inkora-black-ink-bottle.jpeg'),
       alt: 'Physical photograph of glass bottle filled with deep opaque black INKORA ink at MIT AOE Chemical Engineering Lab',
       caption: 'Verified Physical Formulation Specimen · MIT AOE',
       isConcept: false
     },
     paperSwatch: {
-      url: null, // e.g., '/images/products/paper-swatch-black.jpg'
+      url: null, // e.g., getAssetUrl('/images/products/paper-swatch-black.jpg')
       alt: 'Black ink strokes, wet wash gradient, and fine crosshatch lines on 120gsm acid-free white paper',
       caption: 'Surface Tension, Stroke Crispness & Bleed Resistance Specimen',
       isConcept: true
     },
     labStory: {
-      url: null, // e.g., '/images/process/lab-bench-record.jpg'
+      url: null, // e.g., getAssetUrl('/images/process/lab-bench-record.jpg')
       alt: 'Laboratory bench with notebook, Erlenmeyer flask of tea extract, beaker of ferrous sulfate, and prototype black ink bottle',
       caption: 'Empirical Synthesis & Practical Formulation Bench',
       isConcept: true
@@ -59,7 +61,7 @@ export const ASSET_CONFIG = {
       name: 'Tea Extract (Tannic Acid / Polyphenols)',
       role: 'Botanical Tannin Source & Chromophore Precursor',
       category: 'final',
-      image: '/images/ingredients/tea-extract.jpg',
+      image: getAssetUrl('/images/ingredients/tea-extract.jpg'),
       alt: 'Steeped dark tea extract containing concentrated polyphenolic tannins in glassware',
       description: 'Extracted by heating black tea leaves in demineralized water and cooling to room temperature. Provides hydrolysable tannins and gallic acid.',
       functionDetail: 'Reacts with iron(II) ions to generate the dark iron gallate complex.',
@@ -71,7 +73,7 @@ export const ASSET_CONFIG = {
       name: 'Ferrous Sulphate (Iron(II) Sulphate)',
       role: 'Iron Precursor & Color-Forming Agent',
       category: 'final',
-      image: '/images/ingredients/ferrous-sulfate.jpg',
+      image: getAssetUrl('/images/ingredients/ferrous-sulfate.jpg'),
       alt: 'Real photograph of light-green iron(II) sulfate heptahydrate crystals',
       description: 'Iron(II) sulfate heptahydrate crystals (FeSO₄·7H₂O). Supplies Fe²⁺ ions that coordinate with polyphenol catechol groups in the cooled tea extract.',
       functionDetail: 'Forms the insoluble black iron-tannin complex that imparts deep black opacity.',
@@ -83,7 +85,7 @@ export const ASSET_CONFIG = {
       name: 'Demineralized Water (H₂O)',
       role: 'Liquid Base & Solvent Medium',
       category: 'final',
-      image: '/images/ingredients/water.jpg',
+      image: getAssetUrl('/images/ingredients/water.jpg'),
       alt: 'Real photograph of pure demineralized water in a laboratory glass beaker',
       description: 'Demineralized liquid carrier ensuring high dissolution of reactants without interference from ambient multivalent ions.',
       functionDetail: 'Serves as the reaction matrix for extraction, dilution, and consistency balance.',
@@ -95,7 +97,7 @@ export const ASSET_CONFIG = {
       name: 'Gum Arabic (Acacia Senegalis)',
       role: 'Protective Colloid & Viscosity Modifier',
       category: 'final',
-      image: '/images/ingredients/gum-arabic.jpg',
+      image: getAssetUrl('/images/ingredients/gum-arabic.jpg'),
       alt: 'Real photograph of raw natural gum arabic resin crystals',
       description: 'Natural branched polysaccharide resin from Acacia trees. Acts as a protective colloid that suspends the iron-tannin precipitate and prevents coagulation.',
       functionDetail: 'Controls fluid viscosity, prevents premature sedimentation, and improves nib adhesion.',
@@ -107,7 +109,7 @@ export const ASSET_CONFIG = {
       name: 'Glycerine (Propane-1,2,3-triol)',
       role: 'Hygroscopic Humectant',
       category: 'final',
-      image: '/images/ingredients/glycerine.jpg',
+      image: getAssetUrl('/images/ingredients/glycerine.jpg'),
       alt: 'Real photograph of clear liquid glycerine in a labeled glass laboratory bottle',
       description: 'Trihydroxy sugar alcohol (C₃H₈O₃) providing humectant moisture retention. Retards evaporation at the nib tip to reduce crusting.',
       functionDetail: 'Improves nib lubricating glide and supports smooth dip-pen ink laydown.',
@@ -119,7 +121,7 @@ export const ASSET_CONFIG = {
       name: 'Methyl Orange (pH Indicator Trial)',
       role: 'Earlier Pre-Trial & Acid-Base Indicator',
       category: 'earlier',
-      image: '/images/ingredients/methyl-orange.jpg',
+      image: getAssetUrl('/images/ingredients/methyl-orange.jpg'),
       alt: 'Real photograph of orange methyl orange indicator powder in reagent vial',
       description: 'Sodium 4-{[4-(dimethylamino)phenyl]diazenyl}benzenesulfonate. Tested during exploratory acid-base trials. Not responsible for the final black ink colour.',
       functionDetail: 'Used in pre-trials to monitor formulation pH before developing the iron-tannin black ink.',
@@ -135,7 +137,7 @@ export const ASSET_CONFIG = {
       title: 'INKORA Black Ink Bottle',
       category: 'Final Product',
       type: 'image',
-      src: null, // User can set e.g. '/images/products/bottle-1.jpg'
+      src: null, // User can set e.g. getAssetUrl('/images/products/bottle-1.jpg')
       fallbackType: 'bottle',
       caption: 'Glass ink bottle filled with deep black ink, sealed with grooved matte cap.',
       tags: ['Glass Bottle', 'Packaging', 'Black Ink']
@@ -145,7 +147,7 @@ export const ASSET_CONFIG = {
       title: 'Iron(II) Sulfate & Tannin Reactants',
       category: 'Ingredients',
       type: 'image',
-      src: '/images/ingredients/ferrous-sulfate.jpg',
+      src: getAssetUrl('/images/ingredients/ferrous-sulfate.jpg'),
       caption: 'Analytical grade FeSO₄·7H₂O crystals alongside steeped botanical tannin extract.',
       tags: ['Reagents', 'Synthesis', 'Crystals']
     },
@@ -154,7 +156,7 @@ export const ASSET_CONFIG = {
       title: 'Gum Arabic Binder Matrix',
       category: 'Ingredients',
       type: 'image',
-      src: '/images/ingredients/gum-arabic.jpg',
+      src: getAssetUrl('/images/ingredients/gum-arabic.jpg'),
       caption: 'Acacia gum flakes prior to hydration and dispersion in demineralized water.',
       tags: ['Acacia', 'Colloid', 'Binder']
     },
@@ -163,7 +165,7 @@ export const ASSET_CONFIG = {
       title: 'Thermal Extraction of Tannins',
       category: 'Preparation Process',
       type: 'image',
-      src: '/images/ingredients/tea-extract.jpg',
+      src: getAssetUrl('/images/ingredients/tea-extract.jpg'),
       caption: 'Controlled heating of black tea leaves to yield concentrated polyphenolic broth.',
       tags: ['Heating', 'Tannin Extraction', 'Lab Glassware']
     },
@@ -172,7 +174,7 @@ export const ASSET_CONFIG = {
       title: 'Thermal Equilibrating & Cooling Stage',
       category: 'Cooling and Filtration',
       type: 'image',
-      src: '/images/ingredients/water.jpg',
+      src: getAssetUrl('/images/ingredients/water.jpg'),
       caption: 'Thermal cooling of aqueous extract to 21°C before introducing iron(II) sulfate.',
       tags: ['Cooling', 'Thermal Equilibration', 'Filtration']
     },
@@ -181,7 +183,7 @@ export const ASSET_CONFIG = {
       title: 'Nib Laydown & Feathering Assay',
       category: 'Ink Testing and Observations',
       type: 'image',
-      src: null, // User can set e.g. '/images/process/nib-test.jpg'
+      src: null, // User can set e.g. getAssetUrl('/images/process/nib-test.jpg')
       fallbackType: 'paper',
       caption: 'Calligraphic dip-pen evaluation on 120gsm high-cotton substrate.',
       tags: ['Dip Pen', 'Paper Test', 'Drying Curve']

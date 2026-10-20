@@ -4,7 +4,8 @@ import tailwindcss from '@tailwindcss/vite'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: './',
+  // Use repository base path for GitHub Pages in production, root in local development
+  base: process.env.NODE_ENV === 'production' ? '/inkora-black-ink/' : '/',
   plugins: [
     react(),
     tailwindcss(),

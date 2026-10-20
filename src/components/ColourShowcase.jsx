@@ -3,6 +3,7 @@ import BottleCloseUpVisual from './visuals/BottleCloseUpVisual';
 import PaperSwatchVisual from './visuals/PaperSwatchVisual';
 import InteractiveInkCanvas from './visuals/InteractiveInkCanvas';
 import { ASSET_CONFIG } from '../config/assets';
+import { getAssetUrl } from '../utils/assetUrl';
 import { Eye, Copy, Check, Sparkles, X, Maximize2 } from 'lucide-react';
 
 export default function ColourShowcase() {
@@ -158,7 +159,7 @@ export default function ColourShowcase() {
                 <div className="relative aspect-4/3 overflow-hidden bg-gradient-to-b from-[#FFFFFF] via-[#F8FAFC] to-[#EDF2F7] border-b border-[#262832] flex items-center justify-center p-2">
                   {item.src ? (
                     <img
-                      src={item.src}
+                      src={getAssetUrl(item.src)}
                       alt={item.title}
                       className="w-full h-full object-contain rounded-xl group-hover:scale-103 transition-transform duration-500"
                     />
@@ -308,7 +309,7 @@ export default function ColourShowcase() {
               <div className="w-full max-w-2xl bg-gradient-to-b from-[#FFFFFF] via-[#F8FAFC] to-[#EDF2F7] p-4 sm:p-6 rounded-2xl border border-white/20 shadow-xl flex items-center justify-center">
                 {lightboxItem.src ? (
                   <img
-                    src={lightboxItem.src}
+                    src={getAssetUrl(lightboxItem.src)}
                     alt={lightboxItem.title}
                     className="max-h-[55vh] w-auto max-w-full rounded-xl object-contain shadow-sm"
                   />
