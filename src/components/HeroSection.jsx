@@ -2,6 +2,7 @@ import React from 'react';
 import { FlaskConical, ArrowRight } from 'lucide-react';
 import HeroProductVisual from './visuals/HeroProductVisual';
 import InkParticleCanvas from './visuals/InkParticleCanvas';
+import HeadlineNibFlourish from './visuals/HeadlineNibFlourish';
 import { ASSET_CONFIG } from '../config/assets';
 
 export default function HeroSection() {
@@ -45,9 +46,14 @@ export default function HeroSection() {
             </div>
 
             {/* Main Headline */}
-            <h1 className="font-serif text-5xl sm:text-6xl xl:text-7xl font-bold tracking-tight text-white leading-[1.08] mb-6">
+            <h1 className="font-serif text-5xl sm:text-6xl xl:text-7xl font-bold tracking-tight text-white leading-[1.08] mb-3">
               Precision in <span className="italic font-normal shimmer-text">Every Drop.</span>
             </h1>
+
+            {/* Animated Calligraphic Fountain Pen Flourish Underline */}
+            <div className="mb-6 -mt-1 w-full">
+              <HeadlineNibFlourish />
+            </div>
 
             {/* Supporting Text */}
             <p className="text-lg sm:text-xl text-[#94A3B8] leading-relaxed max-w-xl mb-8 font-normal">
@@ -59,7 +65,7 @@ export default function HeroSection() {
               <a
                 href="#our-ink"
                 onClick={(e) => scrollToSection(e, 'our-ink')}
-                className="inline-flex items-center justify-center gap-3 px-7 py-3.5 rounded-full text-sm font-semibold tracking-wide uppercase bg-[#E2E8F0] text-[#090A0C] hover:bg-white transition-all duration-300 shadow-editorial hover:shadow-silver-glow group"
+                className="inline-flex items-center justify-center gap-3 px-7 py-3.5 rounded-full text-sm font-semibold tracking-wide uppercase bg-[#E2E8F0] text-[#090A0C] hover:bg-white transition-all duration-300 shadow-editorial hover:shadow-silver-glow group cursor-pointer"
               >
                 <span>Explore Our Ink</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -68,7 +74,7 @@ export default function HeroSection() {
               <a
                 href="#the-process"
                 onClick={(e) => scrollToSection(e, 'the-process')}
-                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full text-sm font-semibold tracking-wide uppercase bg-[#14151B] text-[#E2E8F0] border border-[#2F323F] hover:border-[#64748B] hover:bg-[#1B1D25] transition-all duration-300"
+                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full text-sm font-semibold tracking-wide uppercase bg-[#14151B] text-[#E2E8F0] border border-[#2F323F] hover:border-[#64748B] hover:bg-[#1B1D25] transition-all duration-300 cursor-pointer"
               >
                 <span>Discover the Process</span>
               </a>
